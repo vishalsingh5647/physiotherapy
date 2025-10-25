@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function ChiropracticHero() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 relative">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 relative flex flex-col overflow-hidden">
       {/* Main Content Container */}
-      <div className="container mx-auto px-6 pt-12 pb-8">
+      <div className="container mx-auto px-6 pt-12 pb-8 flex-grow flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-7 max-w-2xl">
@@ -56,7 +56,7 @@ export default function ChiropracticHero() {
           </div>
 
           {/* Right Content - Medical Professional and Spine */}
-          <div className="relative h-[800px] w-full">
+          <div className="relative h-[650px] w-full">
             {/* Spine Model with Labels - Positioned to the left */}
             <div className="absolute -left-40 top-1/2 transform -translate-y-1/2 z-10 w-1/2">
               <div className="relative">
@@ -103,7 +103,7 @@ export default function ChiropracticHero() {
       </div>
 
       {/* Make an Appointment Section */}
-      <div className="w-full bg-teal-800 rounded-t-3xl px-4 sm:px-8 lg:px-16 py-8 sm:py-12 mt-12">
+      <div className="w-full bg-teal-800 rounded-t-3xl px-4 sm:px-8 lg:px-16 py-8 sm:py-12 mt-auto">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-white text-3xl lg:text-4xl font-bold mb-8">
             Make an Appointment
