@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ChiropracticHero() {
   return (
-    <div className="min-h-[75vh] bg-gradient-to-br from-cyan-50 to-cyan-100 relative overflow-visible flex items-center pb-64 md:pb-72 lg:pb-80">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-100 relative">
       {/* Main Content Container */}
       <div className="container mx-auto px-6 pt-12 pb-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -61,7 +61,7 @@ export default function ChiropracticHero() {
             <div className="absolute -left-40 top-1/2 transform -translate-y-1/2 z-10 w-1/2">
               <div className="relative">
                 <img
-                  src="../images/BackBone.png"
+                  src="/images/BackBone.png"
                   alt="Spine model"
                   className="h-[650px] w-auto object-contain ml-4"
                 />
@@ -93,7 +93,7 @@ export default function ChiropracticHero() {
             {/* Medical Professional Image - Positioned to the right */}
             <div className="absolute right-0 bottom-15 z-20 w-2/3">
               <img
-                src="../images/img-2.png"
+                src="/images/img-2.png"
                 alt="Medical Professional"
                 className="w-full h-[700px] object-cover object-top rounded-tl-3xl rounded-bl-3xl"
               />
@@ -103,7 +103,7 @@ export default function ChiropracticHero() {
       </div>
 
       {/* Make an Appointment Section */}
-      <div className="absolute bottom-0 left-0 right-0 bg-teal-800 rounded-t-3xl px-8 lg:px-16 py-12">
+      <div className="w-full bg-teal-800 rounded-t-3xl px-4 sm:px-8 lg:px-16 py-8 sm:py-12 mt-12">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-white text-3xl lg:text-4xl font-bold mb-8">
             Make an Appointment
@@ -164,6 +164,7 @@ export default function ChiropracticHero() {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors z-50"
+        aria-label="Chat on WhatsApp"
       >
         <svg
           className="w-8 h-8"
