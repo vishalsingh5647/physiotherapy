@@ -91,11 +91,11 @@ export default function ChiropracticHero() {
             </div>
 
             {/* Medical Professional Image - Positioned to the right */}
-            <div className="absolute right-0 bottom-15 z-20 w-2/3">
+            <div className="absolute right-0 top-0 bottom-0 z-20 w-2/3 flex items-end">
               <img
                 src="/images/img-2.png"
                 alt="Medical Professional"
-                className="w-full h-[700px] object-cover object-top rounded-tl-3xl rounded-bl-3xl"
+                className="w-full h-[90%] object-cover object-top rounded-tl-3xl rounded-bl-3xl"
               />
             </div>
           </div>
