@@ -20,11 +20,11 @@ export default function Treatment() {
 
   if (!item) {
     return (
-      <section className="min-h-[60vh] bg-gradient-to-b from-[#0b1b2a] via-[#0e2033] to-[#0b1b2a]">
+      <section className="min-h-[60vh] bg-gradient-to-br from-cyan-50 to-cyan-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Treatment Not Found</h1>
-          <p className="mt-3 text-white/70">The treatment you are looking for does not exist.</p>
-          <Link to="/" className="inline-block mt-6 rounded-full bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold px-5 py-2">Go Home</Link>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-teal-900">Treatment Not Found</h1>
+          <p className="mt-3 text-gray-600">The treatment you are looking for does not exist.</p>
+          <Link to="/" className="inline-block mt-6 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-5 py-2">Go Home</Link>
         </div>
       </section>
     )
@@ -87,23 +87,19 @@ export default function Treatment() {
         }
         const accent = palette[slug] || '#22d3ee'
         return (
-          <section className="relative isolate overflow-hidden">
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0b1b2a] via-[#0e2033] to-[#0b1b2a]" />
-            {/* Accent glow blobs */}
-            <div className="pointer-events-none absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full blur-3xl opacity-30" style={{ background: accent }} />
-            <div className="pointer-events-none absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full blur-3xl opacity-25" style={{ background: accent }} />
+          <section className="relative isolate overflow-hidden bg-gradient-to-br from-cyan-50 to-cyan-100">
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 {/* Left: Text */}
                 <div className="lg:col-span-6">
                   <Reveal>
-                    <nav className="text-white/80 text-sm"><Link to="/" className="hover:text-white">Home</Link> <span className="opacity-70">/</span> <span className="text-white">{item.title}</span></nav>
-                    <h1 className="mt-3 text-3xl sm:text-5xl font-extrabold text-white leading-tight">{item.title}</h1>
-                    <p className="mt-4 max-w-xl text-white/85">{details.overview}</p>
+                    <nav className="text-gray-600 text-sm"><Link to="/" className="hover:text-teal-900">Home</Link> <span className="opacity-70">/</span> <span className="text-teal-900 font-semibold">{item.title}</span></nav>
+                    <h1 className="mt-3 text-3xl sm:text-5xl font-extrabold text-teal-900 leading-tight">{item.title}</h1>
+                    <p className="mt-4 max-w-xl text-gray-600">{details.overview}</p>
                     <div className="mt-6 flex flex-wrap gap-3">
-                      <a href="#contact" className="inline-flex items-center justify-center rounded-full text-white font-semibold px-5 py-2" style={{ backgroundColor: accent }}>Book Appointment</a>
-                      <a href="#learn" className="inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/15 text-white ring-1 ring-white/20 font-semibold px-5 py-2">Learn More</a>
+                      <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-5 py-2">Book Appointment</a>
+                      <a href="#learn" className="inline-flex items-center justify-center rounded-full bg-white hover:bg-gray-50 text-teal-900 ring-1 ring-gray-300 font-semibold px-5 py-2">Learn More</a>
                     </div>
                   </Reveal>
                 </div>
@@ -111,10 +107,8 @@ export default function Treatment() {
                 {/* Right: Image */}
                 <div className="lg:col-span-6">
                   <Reveal delay={120}>
-                    <div className="relative mx-auto w-full max-w-[520px] aspect-[4/3] rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_0_0_1px_rgba(255,255,255,0.05)] overflow-hidden">
+                    <div className="relative mx-auto w-full max-w-[520px] aspect-[4/3] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
-                      <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full" style={{ background: accent, opacity: .15, filter: 'blur(40px)' }} />
                     </div>
                   </Reveal>
                 </div>
@@ -127,29 +121,29 @@ export default function Treatment() {
       })()}
 
       {/* Details */}
-      <section id="learn" className="bg-gradient-to-b from-[#0b1b2a] via-[#0e2033] to-[#0b1b2a] py-12 sm:py-16">
+      <section id="learn" className="bg-white py-12 sm:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8">
             <Reveal>
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white">
-                <h2 className="text-xl font-bold">Key Symptoms</h2>
-                <ul className="mt-3 list-disc list-inside text-white/80 space-y-1">
+              <div className="rounded-2xl border border-gray-200 bg-cyan-50 p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-teal-900">Key Symptoms</h2>
+                <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
                   {details.symptoms.map((s, i) => (<li key={i}>{s}</li>))}
                 </ul>
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white">
-                <h2 className="text-xl font-bold">Common Causes</h2>
-                <ul className="mt-3 list-disc list-inside text-white/80 space-y-1">
+              <div className="rounded-2xl border border-gray-200 bg-cyan-50 p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-teal-900">Common Causes</h2>
+                <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
                   {details.causes.map((c, i) => (<li key={i}>{c}</li>))}
                 </ul>
               </div>
             </Reveal>
             <Reveal delay={200}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white">
-                <h2 className="text-xl font-bold">Benefits</h2>
-                <ul className="mt-3 list-disc list-inside text-white/80 space-y-1">
+              <div className="rounded-2xl border border-gray-200 bg-cyan-50 p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-teal-900">Benefits</h2>
+                <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
                   {details.benefits.map((b, i) => (<li key={i}>{b}</li>))}
                 </ul>
               </div>
@@ -157,25 +151,25 @@ export default function Treatment() {
           </div>
 
           <Reveal delay={120}>
-            <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white">
-              <h2 className="text-xl font-bold">Our Approach</h2>
-              <ol className="mt-3 list-decimal list-inside text-white/80 space-y-1">
+            <div className="mt-8 rounded-2xl border border-gray-200 bg-cyan-50 p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-teal-900">Our Approach</h2>
+              <ol className="mt-3 list-decimal list-inside text-gray-700 space-y-1">
                 {details.approach.map((step, i) => (<li key={i}>{step}</li>))}
               </ol>
             </div>
           </Reveal>
 
           <Reveal delay={160}>
-            <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white">
-              <h2 className="text-xl font-bold">FAQs</h2>
-              <div className="mt-3 divide-y divide-white/10">
+            <div className="mt-8 rounded-2xl border border-gray-200 bg-cyan-50 p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-teal-900">FAQs</h2>
+              <div className="mt-3 divide-y divide-gray-200">
                 {details.faqs.map((f, i) => (
                   <details key={i} className="group py-3">
-                    <summary className="cursor-pointer list-none flex items-center justify-between text-white/90 font-semibold">
+                    <summary className="cursor-pointer list-none flex items-center justify-between text-teal-900 font-semibold">
                       <span>{f.q}</span>
-                      <span className="ml-4 text-white/60 group-open:rotate-180 transition">▾</span>
+                      <span className="ml-4 text-gray-600 group-open:rotate-180 transition">▾</span>
                     </summary>
-                    <p className="mt-2 text-white/70">{f.a}</p>
+                    <p className="mt-2 text-gray-600">{f.a}</p>
                   </details>
                 ))}
               </div>

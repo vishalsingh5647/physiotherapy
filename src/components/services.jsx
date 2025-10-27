@@ -115,22 +115,22 @@ export default function Services({ items = treatments }) {
   return (
     <section id="services" className="py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-white">Our Treatment</h2>
-        <p className="mt-2 text-center text-white/70 max-w-3xl mx-auto">Explore specialized physiotherapy treatments tailored to your condition and recovery goals.</p>
+        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-teal-900">Our Treatment</h2>
+        <p className="mt-2 text-center text-gray-600 max-w-3xl mx-auto">Explore specialized physiotherapy treatments tailored to your condition and recovery goals.</p>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
           {items.map((t, i) => (
             <Reveal key={t.title} delay={i * 50}>
-              <Link to={`/treatment/${t.slug}`} aria-label={t.title} className={`group block text-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] transition-all hover:shadow-xl hover:-translate-y-1` }>
+              <Link to={`/treatment/${t.slug}`} aria-label={t.title} className="group block text-left rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
                 <div className="mx-auto w-48 h-48 sm:w-56 sm:h-56 rounded-full border-2 border-dotted border-emerald-400/70 p-1 ring-1 ring-white/10 group-hover:ring-white/20 transition">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img loading="lazy" decoding="async" src={t.img} alt={t.title} className="w-full h-full object-cover transform transition duration-500 group-hover:scale-105" />
                   </div>
                 </div>
-                <h3 className="mt-5 text-xl font-extrabold text-white">{t.title}</h3>
-                <p className="mt-2 text-white/70 max-w-md mx-auto text-sm leading-relaxed">
+                <h3 className="mt-5 text-xl font-extrabold text-teal-900">{t.title}</h3>
+                <p className="mt-2 text-gray-600 max-w-md text-sm leading-relaxed">
                   {t.desc}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-[#22d3ee] font-semibold">
+                <div className="mt-4 inline-flex items-center gap-2 text-cyan-600 font-semibold">
                   <span>Learn more</span>
                   <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M5 12h12M13 6l6 6-6 6"/></svg>
                 </div>

@@ -44,20 +44,20 @@ export default function WhyChooseUs() {
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Why Choose Us?</h2>
-          <p className="mt-3 text-white/70 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-teal-900">Why Choose Us?</h2>
+          <p className="mt-3 text-gray-600 max-w-3xl mx-auto">
             Experience compassionate, personalized, and scientifically guided physiotherapy.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (
-            <div key={it.title} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-5 sm:p-6 text-white shadow-[0_0_0_1px_rgba(255,255,255,0.05)] hover:shadow-xl transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-white/10 grid place-items-center mb-4">
+            <div key={it.title} className="rounded-2xl border border-gray-200 bg-white p-6 text-teal-900 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="w-10 h-10 rounded-lg bg-cyan-50 grid place-items-center mb-4">
                 {it.icon}
               </div>
               <h3 className="text-lg font-semibold">{it.title}</h3>
-              <p className="mt-2 text-sm text-white/70 leading-relaxed">{it.desc}</p>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>

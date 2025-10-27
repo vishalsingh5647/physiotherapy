@@ -3,6 +3,7 @@ import Home from './pages/home.jsx'
 import { Routes, Route } from 'react-router-dom'
 import Treatment from './pages/treatment.jsx'
 import AboutUs from './pages/aboutus.jsx'
+import ContactUs from './pages/contactus.jsx'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/treatment/:slug" element={<Treatment />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </div>
   )

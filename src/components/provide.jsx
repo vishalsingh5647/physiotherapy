@@ -54,21 +54,21 @@ export default function Provide() {
   return (
     <section id="provide" className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-white">
-          SEE WHAT WE PROVIDE FOR <span className="text-[#22d3ee]">YOUR HEALTH</span>
+        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-teal-900">
+          SEE WHAT WE PROVIDE FOR <span className="text-cyan-600">YOUR HEALTH</span>
         </h2>
         <div className="mt-10 grid md:grid-cols-2 gap-4 sm:gap-6">
           {items.map((it, i) => (
             <Reveal key={it.title} delay={i * 50}>
-              <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-white shadow-[0_0_0_1px_rgba(255,255,255,0.05)] hover:shadow-xl transition-shadow">
+              <div className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
                 <div className="shrink-0">
-                  <div className="w-14 h-14 rounded-xl bg-white/10 grid place-items-center">
+                  <div className="w-14 h-14 rounded-xl bg-cyan-50 grid place-items-center">
                     {it.icon}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-extrabold text-white">{it.title}</h3>
-                  <p className="mt-1 text-white/70 text-sm leading-relaxed">{it.desc}</p>
+                  <h3 className="text-lg font-extrabold text-teal-900">{it.title}</h3>
+                  <p className="mt-1 text-gray-600 text-sm leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             </Reveal>

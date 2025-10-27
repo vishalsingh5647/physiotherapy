@@ -1,4 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const TextRotator = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  
+  const conditions = [
+    'Scoliosis',
+    'Back Pain',
+    'Neck Pain',
+    'Joint Pain',
+    'Sports Injuries'
+  ];
+
+  useEffect(() => {
+    const cycleText = () => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % conditions.length);
+        setIsVisible(true);
+      }, 500); // Half of the transition time
+    };
+
+    const interval = setInterval(cycleText, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span className="relative inline-block min-w-[200px] text-cyan-600 font-bold">
+      <span 
+        className={`inline-block transition-all duration-500 transform ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+        }`}
+      >
+        {conditions[currentIndex]}
+      </span>
+    </span>
+  );
+};
 
 export default function ChiropracticHero() {
   return (
@@ -11,9 +50,10 @@ export default function ChiropracticHero() {
             {/* Heading */}
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter">
               <span className="text-teal-900 block mb-3">Say Goodbye</span>
-              <span className="text-cyan-500 relative">
-                to Scoliosis
-                <span className="absolute -bottom-2 left-0 w-24 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span className="text-teal-900 block mb-3">To{' '}
+              <span className="text-cyan-500">
+                <TextRotator />
+              </span>
               </span>
             </h1>
 
@@ -103,57 +143,63 @@ export default function ChiropracticHero() {
       </div>
 
       {/* Make an Appointment Section */}
-      <div className="w-full bg-teal-800 rounded-t-3xl px-4 sm:px-8 lg:px-16 py-8 sm:py-12 mt-auto">
-        <div className="container mx-auto max-w-7xl">
-          <h2 className="text-white text-3xl lg:text-4xl font-bold mb-8">
+      <div className="w-[calc(100%-5rem)] sm:w-[calc(100%-10rem)] lg:w-[calc(100%-15rem)] bg-teal-800 rounded-t-3xl px-6 py-6 mt-auto ml-20 lg:ml-40">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-white text-2xl lg:text-3xl font-bold mb-6 text-center">
             Make an Appointment
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pr-4 sm:pr-6">
             {/* Name Input */}
             <input
               type="text"
               placeholder="Name"
-              className="px-6 py-4 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full px-4 py-3 text-base rounded-md bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 h-full"
             />
             
             {/* Phone Number Input */}
             <input
               type="tel"
               placeholder="Phone Number"
-              className="px-6 py-4 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full px-4 py-3 text-base rounded-md bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 h-full"
             />
             
             {/* Email Input */}
             <input
               type="email"
               placeholder="Your Email"
-              className="px-6 py-4 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full px-4 py-3 text-base rounded-md bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 h-full"
             />
             
             {/* Services Dropdown */}
-            <select
-              className="px-6 py-4 rounded-lg bg-white text-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 appearance-none cursor-pointer"
-              defaultValue=""
-            >
-              <option value="" disabled>Services</option>
-              <option value="chiropractic">Chiropractic Care</option>
-              <option value="massage">Massage Therapy</option>
-              <option value="physiotherapy">Physiotherapy</option>
-              <option value="consultation">Consultation</option>
-            </select>
+            <div className="sm:col-span-2 lg:col-span-1">
+              <select
+                className="w-full px-4 py-3 text-base rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 appearance-none cursor-pointer h-full"
+                defaultValue=""
+              >
+                <option value="" disabled>Services</option>
+                <option value="chiropractic">Chiropractic Care</option>
+                <option value="massage">Massage Therapy</option>
+                <option value="physiotherapy">Physiotherapy</option>
+                <option value="consultation">Consultation</option>
+              </select>
+            </div>
             
             {/* Date Input */}
-            <input
-              type="date"
-              placeholder="Date"
-              className="px-6 py-4 rounded-lg bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
+            <div className="sm:col-span-1">
+              <input
+                type="date"
+                placeholder="Date"
+                className="w-full px-4 py-3 text-base rounded-md bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 h-full"
+              />
+            </div>
             
             {/* Make Appointment Button */}
-            <button className="px-6 py-4 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold transition-all hover:shadow-lg">
-              Make Appointment
-            </button>
+            <div className="sm:col-span-1">
+              <button className="w-full px-4 py-3 text-base rounded-md bg-yellow-400 hover:bg-yellow-500 text-teal-900 font-semibold transition-all hover:shadow-lg h-full">
+                Make Appointment
+              </button>
+            </div>
           </div>
         </div>
       </div>

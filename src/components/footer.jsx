@@ -2,18 +2,25 @@ import React from 'react'
 
 export default function Footer({
   brand = 'Global Physiotherapy Clinic',
-  tagline = 'Where Pain Relief Comes Naturally',
+  tagline = 'Discover the power of natural healing with chiropractic care.',
   links = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#about' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
     { label: 'Services', href: '#services' },
-    { label: 'Technology', href: '#technology' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact Us', href: '/contact' }
+  ],
+  otherPages = [
+    { label: 'Ortho Physiotherapy', href: '#' },
+    { label: 'Neurological Physiotherapy', href: '#' },
+    { label: 'Sports Rehabilitation', href: '#' },
+    { label: 'Holistic Nutrition', href: '#' },
+    { label: 'Spine Physiotherapy', href: '#' }
   ],
   contact = {
-    phone: '+91-72068 90200',
-    email: 'xyz@gmail.com',
-    address: 'House No. 1809, Urban Estate, Sector 5, Kurukshetra, Haryana 136118'
+    phone1: '+91-7838202820',
+    phone2: '+91-9053072333',
+    email: 'info@globalphysioclinic.com',
+    address: 'Plot no 264, near Artemis Hospital Rd, Koyal Vihar, Sector 52, Gurugram, Haryana 122413'
   },
   socials = [
     {
@@ -34,12 +41,19 @@ export default function Footer({
   ]
 }) {
   return (
-    <footer className="text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <footer className="bg-gradient-to-b from-cyan-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
-            <div className="text-xl font-extrabold">{brand}</div>
-            <p className="mt-2 text-white/70">{tagline}</p>
+          {/* Logo and Tagline */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-16 h-16 rounded-full bg-teal-800 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-10 h-10 text-white">
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 2C8 6 6 9 6 12a6 6 0 0 0 12 0c0-3-2-6-6-10zm0 0s7 5 7 10a7 7 0 0 1-14 0c0-5 7-10 7-10z"/>
+                </svg>
+              </div>
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">{tagline}</p>
             <div className="mt-5 flex gap-3">
               {socials.map((s) => (
                 <a key={s.name} href={s.href} className="w-9 h-9 rounded-full grid place-items-center hover:opacity-90 transition-opacity" style={{ backgroundColor: s.bg }} aria-label={s.name}>
@@ -48,27 +62,65 @@ export default function Footer({
               ))}
             </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <div className="font-semibold mb-3">Quick Links</div>
-            <ul className="space-y-2 text-white/80">
+            <h3 className="font-bold text-teal-900 mb-4">Quick Links</h3>
+            <ul className="space-y-2">
               {links.map((l) => (
-                <li key={l.label}><a href={l.href} className="hover:text-white">{l.label}</a></li>
+                <li key={l.label}><a href={l.href} className="text-gray-600 hover:text-teal-900 text-sm transition-colors">{l.label}</a></li>
               ))}
             </ul>
           </div>
+
+          {/* Other Pages */}
           <div>
-            <div className="font-semibold mb-3">Contact</div>
-            <ul className="space-y-2 text-white/80">
-              <li><span className="text-white">Phone:</span> <a href={`tel:${contact.phone}`} className="hover:text-white">{contact.phone}</a></li>
-              <li><span className="text-white">Email:</span> <a href={`mailto:${contact.email}`} className="hover:text-white">{contact.email}</a></li>
-              <li><span className="text-white">Address:</span> {contact.address}</li>
+            <h3 className="font-bold text-teal-900 mb-4">Other Pages</h3>
+            <ul className="space-y-2">
+              {otherPages.map((l) => (
+                <li key={l.label}><a href={l.href} className="text-gray-600 hover:text-teal-900 text-sm transition-colors">{l.label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-bold text-teal-900 mb-4">Contact Info</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+                </svg>
+                <span className="text-gray-600">{contact.address}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 flex-shrink-0">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/>
+                </svg>
+                <a href={`tel:${contact.phone1}`} className="text-gray-600 hover:text-teal-900">{contact.phone1}</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 flex-shrink-0">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/>
+                </svg>
+                <a href={`tel:${contact.phone2}`} className="text-gray-600 hover:text-teal-900">{contact.phone2}</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 flex-shrink-0">
+                  <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <a href={`mailto:${contact.email}`} className="text-gray-600 hover:text-teal-900">{contact.email}</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-white/60 text-sm">
-          © {new Date().getFullYear()} {brand}. All rights reserved.
+      
+      {/* Bottom Bar */}
+      <div className="bg-teal-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm">
+          <div>Global Physiotherapy Clinic Designed By Rajeev Yadav.</div>
+          <div>Copyright © {new Date().getFullYear()}. All rights reserved to Global Physiotherapy</div>
         </div>
       </div>
     </footer>
