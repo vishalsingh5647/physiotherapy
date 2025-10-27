@@ -10,7 +10,6 @@ import Provide from '../components/provide.jsx'
 import WhyChooseUs from '../components/whychooseus.jsx'
 import Technology from '../components/technology.jsx'
 import Process from '../components/process.jsx'
-import Stats from '../components/stats.jsx'
 import Footer from '../components/footer.jsx'
 
 export default function Home() {
@@ -23,12 +22,19 @@ export default function Home() {
       <Services />
       <Achievement />
       <Divider />
+      <WhyChooseUs imageUrl="/images/exersize01.webp" />
       <HowWeWork />
+      <Divider />
       <Provide />
-      <WhyChooseUs />
+      <div className="my-8">
+        <div className="h-[2px] w-full bg-gradient-to-r from-cyan-300 via-cyan-500 to-cyan-300" />
+      </div>
       <Technology />
+      <div className="my-8">
+        <div className="h-[2px] w-full bg-gradient-to-r from-cyan-300 via-cyan-500 to-cyan-300" />
+      </div>
       <Process />
-      <Stats />
+      <Divider /> 
       <Footer />
     </div>
   )

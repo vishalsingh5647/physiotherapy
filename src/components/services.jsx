@@ -120,7 +120,7 @@ export default function Services({ items = treatments }) {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
           {items.map((t, i) => (
             <Reveal key={t.title} delay={i * 50}>
-              <Link to={`/treatment/${t.slug}`} aria-label={t.title} className="group block text-left rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
+              <Link to={`/treatment/${t.slug}`} aria-label={t.title} className="group block text-left rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_2px_10px_rgba(239,68,68,0.14)] hover:shadow-[0_14px_34px_rgba(239,68,68,0.34)] hover:-translate-y-1 transition-all ring-1 ring-transparent hover:ring-red-200/70">
                 <div className="mx-auto w-48 h-48 sm:w-56 sm:h-56 rounded-full border-2 border-dotted border-emerald-400/70 p-1 ring-1 ring-white/10 group-hover:ring-white/20 transition">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img loading="lazy" decoding="async" src={t.img} alt={t.title} className="w-full h-full object-cover transform transition duration-500 group-hover:scale-105" />

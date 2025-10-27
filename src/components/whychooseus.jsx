@@ -1,65 +1,80 @@
 import React from 'react'
+import Reveal from './reveal.jsx'
 
-export default function WhyChooseUs() {
-  const items = [
-    {
-      title: 'Natural Healing',
-      desc: 'Safe and effective treatments using natural techniques.',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-teal-300" fill="currentColor">
-          <path d="M12 2C8 6 6 9 6 12a6 6 0 0 0 12 0c0-3-2-6-6-10zm0 0s7 5 7 10a7 7 0 0 1-14 0c0-5 7-10 7-10z"/>
-        </svg>
-      )
-    },
-    {
-      title: 'Personalized Care',
-      desc: 'Plans tailored to your specific recovery needs.',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-teal-300" fill="currentColor">
-          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-7 9a7 7 0 0 1 14 0Z"/>
-        </svg>
-      )
-    },
-    {
-      title: 'Experienced Therapist',
-      desc: 'Over 15 years of evidence-based physiotherapy.',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-teal-300" fill="currentColor">
-          <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      )
-    },
-    {
-      title: 'Online Consultation',
-      desc: 'Convenient remote sessions from your home.',
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-6 h-6 text-teal-300" fill="currentColor">
-          <path d="M4 5h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
-        </svg>
-      )
-    }
+export default function WhyChooseUs({ imageUrl }) {
+  const points = [
+    'Expertise and Experience',
+    'Personalized Treatment Plans',
+    'Comprehensive Care',
+    'Compassionate Care'
   ]
 
   return (
-    <section className="py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-teal-900">Why Choose Us?</h2>
-          <p className="mt-3 text-gray-600 max-w-3xl mx-auto">
-            Experience compassionate, personalized, and scientifically guided physiotherapy.
-          </p>
-        </div>
+    <section className="relative py-16 sm:py-20 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-cyan-50 to-cyan-100" />
+      <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-cyan-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-blue-300/30 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-0 -z-10 opacity-30">
+        <svg width="420" height="220" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="2" fill="#22d3ee" />
+            </pattern>
+          </defs>
+          <rect width="420" height="220" fill="url(#dots)" />
+        </svg>
+      </div>
 
-        <div className="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <div key={it.title} className="rounded-2xl border border-gray-200 bg-white p-6 text-teal-900 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="w-10 h-10 rounded-lg bg-cyan-50 grid place-items-center mb-4">
-                {it.icon}
-              </div>
-              <h3 className="text-lg font-semibold">{it.title}</h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">{it.desc}</p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <Reveal delay={60} y={16}>
+          <div className="relative order-2 lg:order-1">
+            <p className="text-cyan-700 font-semibold tracking-wider">WHY CHOOSE</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              <span className="text-teal-900">DR.AMULYA VEER DHAWAN </span>
+              <span className="text-cyan-700">PHYSIOCARE</span>
+            </h2>
+            <p className="mt-5 text-gray-600 leading-relaxed">
+              In a world where physical health is paramount, finding the right healthcare provider is crucial. Dr. Maan Physiocarе offers unparalleled care and expertise to help you regain mobility, alleviate pain, and improve quality of life.
+            </p>
+
+            <ul className="mt-6 space-y-3">
+              {points.map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-teal-900">
+                  <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#0ea5a2] text-white">
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                      <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+                    </svg>
+                  </span>
+                  <span className="text-sm sm:text-base">{pt}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8">
+              <a href="#about" className="inline-flex items-center gap-2 rounded-full bg-[#3b82f6] px-5 py-3 text-white font-medium shadow hover:bg-[#2563eb] transition-colors">
+                Read More
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                  <path d="M12 4l1.41 1.41L8.83 10H20v2H8.83l4.58 4.59L12 18l-8-8z" />
+                </svg>
+              </a>
             </div>
-          ))}
+          </div>
+          </Reveal>
+
+          <Reveal delay={120} y={24}>
+          <div className="relative order-1 lg:order-2">
+            <div className="group aspect-[16/11] sm:aspect-[16/10] lg:aspect-[16/12] w-full overflow-hidden rounded-2xl bg-cyan-100 shadow-sm">
+              {imageUrl ? (
+                <img src={imageUrl} alt="Physiotherapy" className="h-full w-full object-cover opacity-95 transition-transform duration-500 group-hover:scale-105" />
+              ) : (
+                <div className="h-full w-full grid place-items-center text-gray-400">
+                  <span className="text-sm">Physiotherapy image</span>
+                </div>
+              )}
+            </div>
+          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Reveal from './reveal.jsx'
 
 const TextRotator = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,7 +47,8 @@ export default function ChiropracticHero() {
       <div className="container mx-auto px-6 pt-12 pb-8 flex-grow flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-7 max-w-2xl">
+          <Reveal delay={50} y={18}>
+            <div className="space-y-7 max-w-2xl">
             {/* Heading */}
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter">
               <span className="text-teal-900 block mb-3">Say Goodbye</span>
@@ -93,10 +95,12 @@ export default function ChiropracticHero() {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </Reveal>
 
           {/* Right Content - Medical Professional and Spine */}
-          <div className="relative h-[650px] w-full">
+          <Reveal delay={120} y={24}>
+            <div className="relative h-[650px] w-full">
             {/* Spine Model with Labels - Positioned to the left */}
             <div className="absolute -left-40 top-1/2 transform -translate-y-1/2 z-10 w-1/2">
               <div className="relative">
@@ -138,12 +142,14 @@ export default function ChiropracticHero() {
                 className="w-full h-[90%] object-cover object-top rounded-tl-3xl rounded-bl-3xl"
               />
             </div>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
 
       {/* Make an Appointment Section */}
-      <div className="w-[calc(100%-5rem)] sm:w-[calc(100%-10rem)] lg:w-[calc(100%-15rem)] bg-teal-800 rounded-t-3xl px-6 py-6 mt-auto ml-20 lg:ml-40">
+      <Reveal delay={150} y={20}>
+        <div className="w-[calc(100%-5rem)] sm:w-[calc(100%-10rem)] lg:w-[calc(100%-15rem)] bg-teal-800 rounded-t-3xl px-6 py-6 mt-auto ml-20 lg:ml-40">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-white text-2xl lg:text-3xl font-bold mb-6 text-center">
             Make an Appointment
@@ -202,7 +208,8 @@ export default function ChiropracticHero() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </Reveal>
 
       {/* WhatsApp Button */}
       <a

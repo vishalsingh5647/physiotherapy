@@ -17,8 +17,7 @@ export default function Footer({
     { label: 'Spine Physiotherapy', href: '#' }
   ],
   contact = {
-    phone1: '+91-7838202820',
-    phone2: '+91-9053072333',
+    phone1: '+91 7206890200',
     email: 'info@globalphysioclinic.com',
     address: 'Plot no 264, near Artemis Hospital Rd, Koyal Vihar, Sector 52, Gurugram, Haryana 122413'
   },
@@ -98,12 +97,6 @@ export default function Footer({
                   <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/>
                 </svg>
                 <a href={`tel:${contact.phone1}`} className="text-gray-600 hover:text-teal-900">{contact.phone1}</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 flex-shrink-0">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.32 2.22z"/>
-                </svg>
-                <a href={`tel:${contact.phone2}`} className="text-gray-600 hover:text-teal-900">{contact.phone2}</a>
               </li>
               <li className="flex items-center gap-2">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-teal-600 flex-shrink-0">

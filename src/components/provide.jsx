@@ -60,7 +60,7 @@ export default function Provide() {
         <div className="mt-10 grid md:grid-cols-2 gap-4 sm:gap-6">
           {items.map((it, i) => (
             <Reveal key={it.title} delay={i * 50}>
-              <div className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_2px_10px_rgba(34,211,238,0.12)] hover:shadow-[0_14px_34px_rgba(34,211,238,0.28)] transition-all">
                 <div className="shrink-0">
                   <div className="w-14 h-14 rounded-xl bg-cyan-50 grid place-items-center">
                     {it.icon}

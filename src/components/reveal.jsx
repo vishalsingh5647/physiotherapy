@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function Reveal({ children, delay = 0, y = 16 }) {
+export default function Reveal({ children, delay = 0, y = 16, x = 0, scale = 1, duration = 600, ease = 'ease' }) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
@@ -23,10 +23,10 @@ export default function Reveal({ children, delay = 0, y = 16 }) {
     <div
       ref={ref}
       style={{
-        transition: 'opacity .6s ease, transform .6s ease',
+        transition: `opacity ${duration}ms ${ease}, transform ${duration}ms ${ease}`,
         transitionDelay: `${delay}ms`,
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : `translateY(${y}px)`
+        transform: visible ? 'translate(0, 0) scale(1)' : `translate(${x}px, ${y}px) scale(${scale})`
       }}
     >
       {children}
